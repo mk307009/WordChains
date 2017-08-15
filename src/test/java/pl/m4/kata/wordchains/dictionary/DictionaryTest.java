@@ -12,42 +12,42 @@ public class DictionaryTest {
     private static final String WORD_NOT_EXISTS = "notExistingWordIThinkSo";
 
     @Test
-    public void testSetOf5LengthWordsIsNotEmpty() {
+    public void testSetOf5LengthWordsIsNotEmpty() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(5);
         Set<String> result = dictionary.getWords();
         Assert.assertTrue(result.size() > 0);
     }
 
     @Test
-    public void testSetOf3LengthWordsIsNotEmpty() {
+    public void testSetOf3LengthWordsIsNotEmpty() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(3);
         Set<String> result = dictionary.getWords();
         Assert.assertTrue(result.size() > 0);
     }
 
     @Test
-    public void testFindDogWord() {
+    public void testFindDogWord() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(DOG.length());
         Optional<String> result = dictionary.findWord(DOG);
         Assert.assertTrue(result.isPresent());
     }
 
     @Test
-    public void testFindRubyWord() {
+    public void testFindRubyWord() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(RUBY.length());
         Optional<String> result = dictionary.findWord(RUBY);
         Assert.assertTrue(result.isPresent());
     }
 
     @Test
-    public void testFindNotExistingWord() {
+    public void testFindNotExistingWord() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(WORD_NOT_EXISTS.length());
         Optional<String> result = dictionary.findWord(WORD_NOT_EXISTS);
         Assert.assertFalse(result.isPresent());
     }
 
     @Test
-    public void test5LengthWordsHave5Chars() {
+    public void test5LengthWordsHave5Chars() throws DictionaryException {
         Dictionary dictionary = new KataDictionary(5);
         Set<String> result = dictionary.getWords();
         for (String word : result)
