@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class KataDictionary implements Dictionary {
-    private static final String FILE_PATH = "src/main/resources/wordlist.txt";
+    private static final String FILE_PATH = "resources/wordlist.txt";
     private Set<String> words;
     private int wordLength;
 
